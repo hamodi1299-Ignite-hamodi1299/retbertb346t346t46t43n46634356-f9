@@ -8,26 +8,7 @@ const child_process = require("child_process");
 const ownerid = ('474730486787211265')
 const fs = require('fs')
 const moment = require("moment");
-const db = require('quick.db'); 
-const googl = require('goo.gl');  
-const translate = require('google-translate-api');   
-const getYoutubeID = require('get-youtube-id');   
-const { Client, Util } = require('discord.js');  
-const UserBlocked = new Set();   
-const math = require('math-expression-evaluator'); 
-const stripIndents = require('common-tags').stripIndents;
-const figlet = require('figlet');
-const google = require('google-it'); 
-const queue = new Map(); 
-const zalgo = require('zalgolize');   
-const fetchVideoInfo = require('youtube-info');
-const YouTube = require('simple-youtube-api');
-const sql = require("sqlite");
-const dateFormat = require('dateformat'); 
-const pretty = require('pretty-ms') 
-
-,ti={}  
-,spee={};
+const db = require('quick.db');
 
 console.log("Iginte");
 
