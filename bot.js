@@ -627,4 +627,61 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
     }
 });
 
+client.on('voiceStateUpdate', (oldM, newM) => {
+  let m1 = oldM.serverMute;
+  let m2 = newM.serverMute;
+
+  let d1 = oldM.serverDeaf;
+  let d2 = newM.serverDeaf;
+
+  let ch = oldM.guild.channels.find('name', 'log')
+  if(!ch) return;
+
+    oldM.guild.fetchAuditLogs()
+    .then(logs => {
+
+      let user = logs.entries.first().executor.username
+
+    if(m1 === false && m2 === true) {
+       let embed = new Discord.RichEmbed()
+       .setAuthor(`${newM.user.tag}`, newM.user.avatarURL)
+       .setDescription(`${newM} Has Been Voice Muted`)
+       .setFooter(`By : ${user}`)
+        .setColor('#36393e')
+
+       ch.send(embed)
+    }
+    if(m1 === true && m2 === false) {
+       let embed = new Discord.RichEmbed()
+       .setAuthor(`${newM.user.tag}`, newM.user.avatarURL)
+       .setDescription(`${newM} Has Been Voice UnMuted`)
+       .setFooter(`By : ${user}`)
+        .setColor('#36393e')
+       .setTimestamp()
+
+       ch.send(embed)
+    }
+    if(d1 === false && d2 === true) {
+       let embed = new Discord.RichEmbed()
+       .setAuthor(`${newM.user.tag}`, newM.user.avatarURL)
+       .setDescription(`${newM} Has Been Voice Deafened`)
+       .setFooter(`By : ${user}`)
+        .setColor('#36393e')
+       .setTimestamp()
+
+       ch.send(embed)
+    }
+    if(d1 === true && d2 === false) {
+       let embed = new Discord.RichEmbed()
+       .setAuthor(`${newM.user.tag}`, newM.user.avatarURL)
+       .setDescription(`${newM} Has Been Voice UnDeafened`)
+       .setFooter(`By : ${user}`)
+        .setColor('#36393e')
+       .setTimestamp()
+
+       ch.send(embed)
+    }
+  })
+})
+
 client.login(process.env.BOT_TOKEN);
