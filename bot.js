@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = new Discord.1299();
+const client = new Discord.hamodi();
 const jimp = require("jimp");// npm i jimp
 const package = ('package.json');
 const yt = require('ytdl-core');
@@ -12,29 +12,29 @@ const db = require('quick.db');
 
 console.log("Iginte");
 
-1299.on('ready', () => {//source
+hamodi.on('ready', () => {//source
     console.log('+[------------------------------------]+');
     console.log('')
     console.log('            +[------------]+')
     console.log('              Bot Is Online')
     console.log('            +[------------]+')
     console.log('')
-    console.log(`Logged in as ${1299.user.tag}!`);
+    console.log(`Logged in as ${hamodi.user.tag}!`);
     console.log('')
-    console.log(`servers! [ " ${1299.guilds.size} " ]`);
+    console.log(`servers! [ " ${hamodi.guilds.size} " ]`);
     console.log('')
-    console.log(`Users! [ " ${1299.users.size} " ]`);
+    console.log(`Users! [ " ${hamodi.users.size} " ]`);
     console.log('')
     console.log('+[------------------------------------]+')
   });
   
-  1299.on('error', console.error);
+  hamodi.on('error', console.error);
  
-1299.on('messageDelete', message => {
+hamodi.on('messageDelete', message => {
     if(message.author.bot) return;
     if(message.channel.type === 'dm') return;
-    if(!message.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
-    if(!message.guild.member(1299.user).hasPermission('MANAGE_MESSAGES')) return;
+    if(!message.guild.member(hamodi.user).hasPermission('EMBED_LINKS')) return;
+    if(!message.guild.member(hamodi.user).hasPermission('MANAGE_MESSAGES')) return;
  
     var logChannel = message.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -49,12 +49,12 @@ console.log("Iginte");
  
     logChannel.send(messageDelete);
 });
-1299.on('messageUpdate', (oldMessage, newMessage) => {
+hamodi.on('messageUpdate', (oldMessage, newMessage) => {
  
     if(oldMessage.author.bot) return;
     if(!oldMessage.channel.type === 'dm') return;
-    if(!oldMessage.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
-    if(!oldMessage.guild.member(1299.user).hasPermission('MANAGE_MESSAGES')) return;
+    if(!oldMessage.guild.member(hamodi.user).hasPermission('EMBED_LINKS')) return;
+    if(!oldMessage.guild.member(hamodi.user).hasPermission('MANAGE_MESSAGES')) return;
  
     var logChannel = oldMessage.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -74,10 +74,10 @@ console.log("Iginte");
  
  
 
-1299.on('roleCreate', role => {
+hamodi.on('roleCreate', role => {
  
-    if(!role.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
-    if(!role.guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!role.guild.member(hamodi.user).hasPermission('EMBED_LINKS')) return;
+    if(!role.guild.member(hamodi.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = role.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -97,10 +97,10 @@ console.log("Iginte");
         logChannel.send(roleCreate);
     })
 });
-1299.on('roleDelete', role => {
+hamodi.on('roleDelete', role => {
  
-    if(!role.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
-    if(!role.guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!role.guild.member(hamodi.user).hasPermission('EMBED_LINKS')) return;
+    if(!role.guild.member(hamodi.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = role.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -120,10 +120,10 @@ console.log("Iginte");
         logChannel.send(roleDelete);
     })
 });
-1299.on('roleUpdate', (oldRole, newRole) => {
+hamodi.on('roleUpdate', (oldRole, newRole) => {
  
-    if(!oldRole.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
-    if(!oldRole.guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!oldRole.guild.member(hamodi.user).hasPermission('EMBED_LINKS')) return;
+    if(!oldRole.guild.member(hamodi.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = oldRole.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -180,11 +180,11 @@ console.log("Iginte");
  
  
 
-1299.on('channelCreate', channel => {
+hamodi.on('channelCreate', channel => {
  
     if(!channel.guild) return;
-    if(!channel.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
-    if(!channel.guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!channel.guild.member(hamodi.user).hasPermission('EMBED_LINKS')) return;
+    if(!channel.guild.member(hamodi.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = channel.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -214,10 +214,10 @@ console.log("Iginte");
         logChannel.send(channelCreate);
     })
 });
-1299.on('channelDelete', channel => {
+hamodi.on('channelDelete', channel => {
     if(!channel.guild) return;
-    if(!channel.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
-    if(!channel.guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!channel.guild.member(hamodi.user).hasPermission('EMBED_LINKS')) return;
+    if(!channel.guild.member(hamodi.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = channel.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -247,7 +247,7 @@ console.log("Iginte");
         logChannel.send(channelDelete);
     })
 });
-1299.on('channelUpdate', (oldChannel, newChannel) => {
+hamodi.on('channelUpdate', (oldChannel, newChannel) => {
     if(!oldChannel.guild) return;
  
     var logChannel = oldChannel.guild.channels.find(c => c.name === 'log');
@@ -294,10 +294,10 @@ console.log("Iginte");
  
  
 
-1299.on('guildBanAdd', (guild, user) => {
+hamodi.on('guildBanAdd', (guild, user) => {
  
-    if(!guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
-    if(!guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!guild.member(hamodi.user).hasPermission('EMBED_LINKS')) return;
+    if(!guild.member(hamodi.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -306,7 +306,7 @@ console.log("Iginte");
         var userID = logs.entries.first().executor.id;
         var userAvatar = logs.entries.first().executor.avatarURL;
  
-        if(userID === 1299.user.id) return;
+        if(userID === hamodi.user.id) return;
  
         let banInfo = new Discord.RichEmbed()
         .setTitle('**[BANNED]**')
@@ -319,9 +319,9 @@ console.log("Iginte");
         logChannel.send(banInfo);
     })
 });
-1299.on('guildBanRemove', (guild, user) => {
-    if(!guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
-    if(!guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
+hamodi.on('guildBanRemove', (guild, user) => {
+    if(!guild.member(hamodi.user).hasPermission('EMBED_LINKS')) return;
+    if(!guild.member(hamodi.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -341,10 +341,10 @@ console.log("Iginte");
         logChannel.send(unBanInfo);
     })
 });
-1299.on('guildUpdate', (oldGuild, newGuild) => {
+hamodi.on('guildUpdate', (oldGuild, newGuild) => {
  
-    if(!oldGuild.member(1299.user).hasPermission('EMBED_LINKS')) return;
-    if(!oldGuild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!oldGuild.member(hamodi.user).hasPermission('EMBED_LINKS')) return;
+    if(!oldGuild.member(hamodi.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = oldGuild.channels.find(c => c.id === guildSettings[oldGuild.id].logChannel);
     if(!logChannel) return;
@@ -420,7 +420,7 @@ console.log("Iginte");
         }
     })
 });
-1299.on('guildMemberUpdate', (oldMember, newMember) => {
+hamodi.on('guildMemberUpdate', (oldMember, newMember) => {
     var logChannel = oldMember.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
  
@@ -490,7 +490,7 @@ console.log("Iginte");
         logChannel.send(newOwner);
     }
 });
-1299.on('guildMemberAdd', member => {
+hamodi.on('guildMemberAdd', member => {
   var logChannel = member.guild.channels.find(c => c.name === 'log');
   if(!logChannel) return;
  
@@ -510,7 +510,7 @@ function Days(date) {
     let days = Math.floor(diff / 86400000);
     return days + (days == 1 ? " day" : " days") + " ago";
 }
-1299.on('guildMemberRemove', member => {
+hamodi.on('guildMemberRemove', member => {
   var logChannel = member.guild.channels.find(c => c.name === 'log');
   if(!logChannel) return;
  
@@ -527,10 +527,10 @@ function Days(date) {
  
  
 
-1299.on('voiceStateUpdate', (voiceOld, voiceNew) => {
+hamodi.on('voiceStateUpdate', (voiceOld, voiceNew) => {
  
-    if(!voiceOld.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
-    if(!voiceOld.guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!voiceOld.guild.member(hamodi.user).hasPermission('EMBED_LINKS')) return;
+    if(!voiceOld.guild.member(hamodi.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = voiceOld.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -628,4 +628,4 @@ function Days(date) {
 });
 
 
-1299.login(process.env.BOT_TOKEN);
+hamodi.login(process.env.BOT_TOKEN);
