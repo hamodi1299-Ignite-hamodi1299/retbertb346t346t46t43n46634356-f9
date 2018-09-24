@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = new Discord.1299();
 const jimp = require("jimp");// npm i jimp
 const package = ('package.json');
 const yt = require('ytdl-core');
@@ -12,29 +12,29 @@ const db = require('quick.db');
 
 console.log("Iginte");
 
-client.on('ready', () => {//source
-    console.log('╔[════════════════════════════════════]╗');
+1299.on('ready', () => {//source
+    console.log('+[------------------------------------]+');
     console.log('')
-    console.log('            ╔[════════════]╗')
+    console.log('            +[------------]+')
     console.log('              Bot Is Online')
-    console.log('            ╚[════════════]╝')
+    console.log('            +[------------]+')
     console.log('')
-    console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`Logged in as ${1299.user.tag}!`);
     console.log('')
-    console.log(`servers! [ " ${client.guilds.size} " ]`);
+    console.log(`servers! [ " ${1299.guilds.size} " ]`);
     console.log('')
-    console.log(`Users! [ " ${client.users.size} " ]`);
+    console.log(`Users! [ " ${1299.users.size} " ]`);
     console.log('')
-    console.log('╚[════════════════════════════════════]╝')
+    console.log('+[------------------------------------]+')
   });
   
-  client.on('error', console.error);
+  1299.on('error', console.error);
  
-client.on('messageDelete', message => {
+1299.on('messageDelete', message => {
     if(message.author.bot) return;
     if(message.channel.type === 'dm') return;
-    if(!message.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
-    if(!message.guild.member(client.user).hasPermission('MANAGE_MESSAGES')) return;
+    if(!message.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
+    if(!message.guild.member(1299.user).hasPermission('MANAGE_MESSAGES')) return;
  
     var logChannel = message.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -49,12 +49,12 @@ client.on('messageDelete', message => {
  
     logChannel.send(messageDelete);
 });
-client.on('messageUpdate', (oldMessage, newMessage) => {
+1299.on('messageUpdate', (oldMessage, newMessage) => {
  
     if(oldMessage.author.bot) return;
     if(!oldMessage.channel.type === 'dm') return;
-    if(!oldMessage.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
-    if(!oldMessage.guild.member(client.user).hasPermission('MANAGE_MESSAGES')) return;
+    if(!oldMessage.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
+    if(!oldMessage.guild.member(1299.user).hasPermission('MANAGE_MESSAGES')) return;
  
     var logChannel = oldMessage.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -73,11 +73,11 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
 });
  
  
-// Roles Logs
-client.on('roleCreate', role => {
+
+1299.on('roleCreate', role => {
  
-    if(!role.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
-    if(!role.guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!role.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
+    if(!role.guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = role.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -97,10 +97,10 @@ client.on('roleCreate', role => {
         logChannel.send(roleCreate);
     })
 });
-client.on('roleDelete', role => {
+1299.on('roleDelete', role => {
  
-    if(!role.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
-    if(!role.guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!role.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
+    if(!role.guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = role.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -120,10 +120,10 @@ client.on('roleDelete', role => {
         logChannel.send(roleDelete);
     })
 });
-client.on('roleUpdate', (oldRole, newRole) => {
+1299.on('roleUpdate', (oldRole, newRole) => {
  
-    if(!oldRole.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
-    if(!oldRole.guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!oldRole.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
+    if(!oldRole.guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = oldRole.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -179,12 +179,12 @@ client.on('roleUpdate', (oldRole, newRole) => {
 });
  
  
-// Channels Log
-client.on('channelCreate', channel => {
+
+1299.on('channelCreate', channel => {
  
     if(!channel.guild) return;
-    if(!channel.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
-    if(!channel.guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!channel.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
+    if(!channel.guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = channel.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -214,10 +214,10 @@ client.on('channelCreate', channel => {
         logChannel.send(channelCreate);
     })
 });
-client.on('channelDelete', channel => {
+1299.on('channelDelete', channel => {
     if(!channel.guild) return;
-    if(!channel.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
-    if(!channel.guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!channel.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
+    if(!channel.guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = channel.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -247,7 +247,7 @@ client.on('channelDelete', channel => {
         logChannel.send(channelDelete);
     })
 });
-client.on('channelUpdate', (oldChannel, newChannel) => {
+1299.on('channelUpdate', (oldChannel, newChannel) => {
     if(!oldChannel.guild) return;
  
     var logChannel = oldChannel.guild.channels.find(c => c.name === 'log');
@@ -293,11 +293,11 @@ client.on('channelUpdate', (oldChannel, newChannel) => {
 });
  
  
-// Guild Logs
-client.on('guildBanAdd', (guild, user) => {
+
+1299.on('guildBanAdd', (guild, user) => {
  
-    if(!guild.member(client.user).hasPermission('EMBED_LINKS')) return;
-    if(!guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
+    if(!guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -306,7 +306,7 @@ client.on('guildBanAdd', (guild, user) => {
         var userID = logs.entries.first().executor.id;
         var userAvatar = logs.entries.first().executor.avatarURL;
  
-        if(userID === client.user.id) return;
+        if(userID === 1299.user.id) return;
  
         let banInfo = new Discord.RichEmbed()
         .setTitle('**[BANNED]**')
@@ -319,9 +319,9 @@ client.on('guildBanAdd', (guild, user) => {
         logChannel.send(banInfo);
     })
 });
-client.on('guildBanRemove', (guild, user) => {
-    if(!guild.member(client.user).hasPermission('EMBED_LINKS')) return;
-    if(!guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
+1299.on('guildBanRemove', (guild, user) => {
+    if(!guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
+    if(!guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -341,10 +341,10 @@ client.on('guildBanRemove', (guild, user) => {
         logChannel.send(unBanInfo);
     })
 });
-client.on('guildUpdate', (oldGuild, newGuild) => {
+1299.on('guildUpdate', (oldGuild, newGuild) => {
  
-    if(!oldGuild.member(client.user).hasPermission('EMBED_LINKS')) return;
-    if(!oldGuild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!oldGuild.member(1299.user).hasPermission('EMBED_LINKS')) return;
+    if(!oldGuild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = oldGuild.channels.find(c => c.id === guildSettings[oldGuild.id].logChannel);
     if(!logChannel) return;
@@ -420,7 +420,7 @@ client.on('guildUpdate', (oldGuild, newGuild) => {
         }
     })
 });
-client.on('guildMemberUpdate', (oldMember, newMember) => {
+1299.on('guildMemberUpdate', (oldMember, newMember) => {
     var logChannel = oldMember.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
  
@@ -431,12 +431,12 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
  
         if(oldMember.nickname !== newMember.nickname) {
             if(oldMember.nickname === null) {
-                var oldNM = '\`\`اسمه الاصلي\`\`';
+                var oldNM = '\`\`???? ??????\`\`';
             }else {
                 var oldNM = oldMember.nickname;
             }
             if(newMember.nickname === null) {
-                var newNM = '\`\`اسمه الاصلي\`\`';
+                var newNM = '\`\`???? ??????\`\`';
             }else {
                 var newNM = newMember.nickname;
             }
@@ -490,7 +490,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
         logChannel.send(newOwner);
     }
 });
-client.on('guildMemberAdd', member => {
+1299.on('guildMemberAdd', member => {
   var logChannel = member.guild.channels.find(c => c.name === 'log');
   if(!logChannel) return;
  
@@ -510,7 +510,7 @@ function Days(date) {
     let days = Math.floor(diff / 86400000);
     return days + (days == 1 ? " day" : " days") + " ago";
 }
-client.on('guildMemberRemove', member => {
+1299.on('guildMemberRemove', member => {
   var logChannel = member.guild.channels.find(c => c.name === 'log');
   if(!logChannel) return;
  
@@ -526,11 +526,11 @@ client.on('guildMemberRemove', member => {
 });
  
  
-// Voice Logs
-client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
+
+1299.on('voiceStateUpdate', (voiceOld, voiceNew) => {
  
-    if(!voiceOld.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
-    if(!voiceOld.guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
+    if(!voiceOld.guild.member(1299.user).hasPermission('EMBED_LINKS')) return;
+    if(!voiceOld.guild.member(1299.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
     var logChannel = voiceOld.guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
@@ -540,7 +540,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
         var userTag = logs.entries.first().executor.tag;
         var userAvatar = logs.entries.first().executor.avatarURL;
  
-// Server Muted Voice
+
         if(voiceOld.serverMute === false && voiceNew.serverMute === true) {
             let serverMutev = new Discord.RichEmbed()
             .setTitle('**[VOICE MUTE]**')
@@ -552,7 +552,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
  
             logChannel.send(serverMutev);
         }
-// Server UnMuted Voice
+
         if(voiceOld.serverMute === true && voiceNew.serverMute === false) {
             let serverUnmutev = new Discord.RichEmbed()
             .setTitle('**[VOICE UNMUTE]**')
@@ -564,7 +564,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
  
             logChannel.send(serverUnmutev);
         }
-// Server Deafen Voice
+
         if(voiceOld.serverDeaf === false && voiceNew.serverDeaf === true) {
             let serverDeafv = new Discord.RichEmbed()
             .setTitle('**[VOICE DEAFEN]**')
@@ -576,7 +576,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
  
             logChannel.send(serverDeafv);
         }
-// Server UnDeafen Voice
+
         if(voiceOld.serverDeaf === true && voiceNew.serverDeaf === false) {
             let serverUndeafv = new Discord.RichEmbed()
             .setTitle('**[VOICE UNDEAFEN]**')
@@ -589,7 +589,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
             logChannel.send(serverUndeafv);
         }
     })
-// Join Voice Channel
+
     if(voiceOld.voiceChannelID !== voiceNew.voiceChannelID && !voiceOld.voiceChannel) {
         let voiceJoin = new Discord.RichEmbed()
         .setTitle('**[JOIN VOICE ROOM]**')
@@ -601,7 +601,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
  
         logChannel.send(voiceJoin);
     }
-// Leave Voice Channel
+
     if(voiceOld.voiceChannelID !== voiceNew.voiceChannelID && !voiceNew.voiceChannel) {
         let voiceLeave = new Discord.RichEmbed()
         .setTitle('**[LEAVE VOICE ROOM]**')
@@ -613,7 +613,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
  
         logChannel.send(voiceLeave);
     }
-// Changed Voice Channel
+
     if(voiceOld.voiceChannelID !== voiceNew.voiceChannelID && voiceNew.voiceChannel && voiceOld.voiceChannel != null) {
         let voiceLeave = new Discord.RichEmbed()
         .setTitle('**[CHANGED VOICE ROOM]**')
@@ -628,4 +628,4 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
 });
 
 
-client.login(process.env.BOT_TOKEN);
+1299.login(process.env.BOT_TOKEN);
