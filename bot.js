@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = new Discord.hamodi();
+const hamodi = new Discord.client();
 const jimp = require("jimp");// npm i jimp
 const package = ('package.json');
 const yt = require('ytdl-core');
